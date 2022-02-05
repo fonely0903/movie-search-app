@@ -1,0 +1,67 @@
+.movieInfo {
+    display: flex;
+    padding-bottom: 20px;;
+}
+
+.posterWrapper {
+    flex: 1;
+}
+
+.infoDetail {
+    flex: 3;
+}
+
+.mainInfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.otherInfo {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.imdbRating {
+    text-align: center;
+}
+
+.imdbRatingNum {
+    font-size: 50px;    
+}
+
+.block {
+    display: block;
+}
+
+.ratings {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ratingItem {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    margin: 5px;
+    padding: 20px 5px;
+    border-radius: 5px;
+}
+
+.scoreWrapper {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    padding: 8px;
+    background: #fff;
+    border: 2px solid #e57b03;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: 20px Arial, sans-serif;
+}

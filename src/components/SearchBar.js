@@ -1,14 +1,17 @@
+import style from './SearchBar.module.css'
+
 const SearchBar = (props) => {
     return (
-        <div className='input-wrapper'>
+        <div className={style.inputWrapper}>
             <input 
-                className='search-bar'
+                className={style.searchInput}
                 placeholder='type a movie title...'
-                onChange={props.triggerSearch}
+                onChange={props.updateKeyword}
             />
             <button
-                className='submit-btn'
+                className={style.searchBtn}
                 type='submit'
+                onClick={props.triggerSearch}
             >Submit</button>
         </div>
     );

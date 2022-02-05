@@ -9,16 +9,14 @@ import Layout from "./components/layout/Layout";
 function App() {
   return (
     <Layout>
-      <Router>
-        <Routes>
-          <Route path='/' element={<AllMovies/>}>
-          </Route>
-          <Route path='/detail/:id' element={<Detail/>}>
-          </Route>
-          <Route path='/favorites' element={<Favorites/>}>
-          </Route>
-        </Routes>
-      </Router>
+      <Routes>
+        <Route path='/' element={<AllMovies/>}>
+        </Route>
+        <Route path='/detail/:id' element={<Detail/>}>
+        </Route>
+        <Route path='/favorites' element={<Favorites/>}>
+        </Route>
+      </Routes>
     </Layout>
   );
 }

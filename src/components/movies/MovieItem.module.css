@@ -1,0 +1,63 @@
+.poster {
+    width: 300px;
+    height: 450px;
+    object-fit: cover;
+    text-align: center;
+    -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: all .3s ease-in-out;
+}
+
+.poster:hover {
+    transform: scale(1.1)
+}
+
+.poster:hover ~ .title {
+    display: none;
+}
+
+.noPoster {
+    width: 300px;
+    height: 450px;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    text-decoration:  none;
+}
+
+.title {
+    width: 300px;
+    margin: 0px;
+    text-align: center;
+    position: absolute;
+    color: white;
+    background-color: rgba(51, 104, 153, 0.7);
+    z-index: 10;
+    padding: 0 15px;
+}
+
+.icon {
+    color: white;
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+    font-size: 30px;
+}
+
+.movieItem {
+    padding: 0 20px 20px 20px;
+    list-style: none;
+    flex: 0 0 33.333%;
+}
+
+.posterWrapper {
+    display: block;
+    width: 300px;
+    height: 450px;
+    margin: auto;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
