@@ -7,21 +7,27 @@ import MovieContext from "../service/movie-context";
 import MovieList from "../components/movies/MovieList";
 
 const AllMovies = () => {
-    const { setSearch, movies } = useContext(MovieContext);
+    const { setSearch, movies, allTitles, enquiryMovies } = useContext(MovieContext);
     const [keyword, setKeyword] = useState('');
 
-    const updateSearch = (e) => {
+    const updateSearchByEvent = (e) => {
+        setSearch(e.target.value);
         setKeyword(e.target.value)
     };
 
-    const handleSearch = () => {
+    const updateSearchByParams = (keyword) => {
         setSearch(keyword);
+        setKeyword(keyword);
+    }
+
+    const handleSearch = () => {
+        enquiryMovies(keyword);
     }
 
     return (
         <div>
             <h1>All Movies</h1>
-            <SearchBar triggerSearch={handleSearch} updateKeyword={updateSearch}/>
+            <SearchBar triggerSearch={handleSearch} updateKeywordByEvent={updateSearchByEvent} updateKeywordByParams={updateSearchByParams}/>
             {movies?.length > 0 ? (
                 <div>
                     <MovieList movies={movies}/>

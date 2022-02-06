@@ -12,10 +12,12 @@ const MovieContext = createContext({
 
 export const MovieContextProvider = (props) => {
     const [allMovies, setMovies] = useState([]);
+    const [allTitles, setTitles] = useState([]);
     const [favorites, setFavorites] = useState([]);
     const [favoriteCount, setFavoriteCount] = useState(0);
     const [detail, setDetail] = useState('');
     const [search, setSearch] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
 
     const enquiryMovies = async (search) => {
         const res = await axios(
@@ -25,12 +27,22 @@ export const MovieContextProvider = (props) => {
         setMovies(data.Search);
     }
 
+    const getPossibleTitles = async (search) => {
+        const res = await axios(
+            `https://www.omdbapi.com/?apikey=${API_KEY}&s=${search}&page=1`
+        );
+        const titles = res.data.Search?.map(s => ({id: s.imdbID, title: s.Title}));
+        setTitles(titles);
+    }
+
     const getDetail = async (id) => {
+        setIsLoading(true);
         const res = await axios(
             `https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}&plot=full`
         );
         const data = res.data;
         setDetail(data);
+        setIsLoading(false);
     }
 
     const addFavoriteMovie = (movie) => {
@@ -73,12 +85,14 @@ export const MovieContextProvider = (props) => {
         totalFavorites: favorites.length,
         getDetail,
         setSearch,
+        enquiryMovies,
         favoriteHandler,
+        isLoading,
+        allTitles,
     }
 
     useEffect(() => {
-        console.log(API_KEY)
-        enquiryMovies(search);
+        getPossibleTitles(search);
         initFavoriteFromLS();
       }, [search]);
 

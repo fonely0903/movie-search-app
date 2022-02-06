@@ -6,15 +6,23 @@ import MovieContext from "../service/movie-context";
 import { FontAwesomeIcon }  from "@fortawesome/react-fontawesome";
 import { faChild } from "@fortawesome/free-solid-svg-icons";
 import style from './Detail.module.css'
+import loader from '../img/Spinner-1s-200px.gif'
 
 const Detail = () => {
     const { id } = useParams();
-    const { getDetail, selectedMovie } = useContext(MovieContext);
+    const { getDetail, selectedMovie, isLoading } = useContext(MovieContext);
 
     useEffect(() => {
         getDetail(id);
       }, []);
 
+    if (isLoading) {
+        return (
+            <div className={style.loading}>
+                <img src={loader} alt="loading"/>
+            </div>
+        )
+    }
     return (
         <div>
             <h1>Movie Detail</h1>

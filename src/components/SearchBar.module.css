@@ -3,14 +3,18 @@
     justify-content: center;
     padding: 20px;
 }
+.searchTitle {
+    height: 48px;
+    padding: 8px 15px;
+    font-size: 20px;
+}
 
 .searchInput {
     width: 522px;
     height: 48px;
     font-size: inherit;
     padding: 0 58px 0 28px;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
+    
     border: none;
     border: 1.3px solid #f2f2f2;
     outline: 0;
@@ -28,4 +32,30 @@
     background-color: #336899;
     color: white;
     z-index: 10;
+}
+
+.autoCompleteList {
+    width:522px;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    z-index: 20;
+}
+
+.autoCompleteItem {
+    cursor: pointer;
+    list-style: none;
+    box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.15);
+    background-color: white;
+    padding: 3px 28px;
+}
+
+.autoCompleteItem:hover {
+    background-color: #4398ef;
+    color: white;
+}
+
+.activeSuggestion {
+    background-color: #4398ef;
+    color: white;
 }

@@ -1,6 +1,7 @@
 .movieInfo {
     display: flex;
     padding-bottom: 20px;;
+    align-items: center;
 }
 
 .posterWrapper {
@@ -64,4 +65,9 @@
     align-items: center;
     justify-content: center;
     font: 20px Arial, sans-serif;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
 }

@@ -44,6 +44,7 @@
     right: 15px;
     bottom: 10px;
     font-size: 30px;
+    cursor: pointer;
 }
 
 .movieItem {

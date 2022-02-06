@@ -10,7 +10,7 @@ const MovieItem = (props) => {
         <li className={style.movieItem} key={props.Id}>
             <div className={style.posterWrapper}>
                 <Link 
-                    to={`detail/${props.Id}`}
+                    to={`/detail/${props.Id}`}
                     key={props.Id}>
                     <p className={style.title}>{props.Title}</p>
                 </Link>
