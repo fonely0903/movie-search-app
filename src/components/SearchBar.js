@@ -6,8 +6,8 @@ import MovieContext from "../service/movie-context";
 import { isLabelWithInternallyDisabledControl } from "@testing-library/user-event/dist/utils";
 
 const SearchBar = (props) => {
-    const { allTitles } = useContext(MovieContext);
-    const [keyword, setKeyword] = useState('');
+    const { allTitles, search } = useContext(MovieContext);
+    const [keyword, setKeyword] = useState(search);
     const [activeSuggestion, setActiveSuggestion] = useState(0);
     const [focus, setFocus] = useState(false);
 

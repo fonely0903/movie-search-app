@@ -89,6 +89,7 @@ export const MovieContextProvider = (props) => {
         favoriteHandler,
         isLoading,
         allTitles,
+        search
     }
 
     useEffect(() => {
